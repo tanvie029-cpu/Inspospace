@@ -1,0 +1,218 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+}
+body{
+    background-image: url("https://images.wallpaperscraft.com/image/single/boat_sea_ocean_130523_1366x768.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.navbar{
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+}
+.logo-navbar{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: 2rem;
+}
+.logo-container {
+  height: 8vmin;      /* same as logo height */
+  display: flex;      /* helps vertical centering */
+  align-items: center;
+  overflow: hidden;
+}
+
+#logo{
+    height: 6vmin;
+    width: 6vmin;
+    background-image: url("logo.png");
+    background-size: cover;
+    animation: bounce 3s infinite alternate;
+    border-radius: 20%;
+}
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
+#name{
+    font-family: 'Quicksand' sans-serif;
+    font-size: 2em;
+    font-weight: 700;
+}
+
+@keyframes bounce {
+  0%{
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(-10%);                              /* smaller upward movement */
+  }
+}
+.quote-navbar{
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    margin-right: 0.25rem;
+}
+#heart{
+    height: 6vmin;
+    width: 6vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20%;
+    background-color: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(6px);                                 /* main glass blur */
+    border: 1px solid rgba(255, 255, 255, 0.3);              /* frosty edge */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);                  /* optional soft shadow */
+
+}
+#heart:hover{
+    background-color: rgba(255, 255, 255, 0.35);               /* more opaque glass on hover */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);                   /* slightly stronger shadow */
+}
+#notification{
+    background-color: rgb(43, 155, 71);
+    border-bottom-left-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
+    height: 6vmin;
+    width: 2vmin;                                             /* small strip visible */
+    padding-left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    white-space: nowrap;
+    opacity: 0.9;
+    transition: width 0.4s ease, padding-left 0.4s ease;
+}
+#notification i{
+     margin-right: 0.6em;
+}
+
+/* Expanded state */
+#notification.show {
+    width: 30vmin;                        /* full width for message */
+    padding-left: 1rem;
+    border-radius:0.8rem ;
+}
+
+#notification * {
+    opacity: 0;                          /* hide inner elements in collapsed state */
+    transition: opacity 0.2s ease;
+}
+
+#notification.show * {
+    opacity: 1;                        /* reveal inner elements after expand */
+}
+
+.app{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 41rem;
+}
+.app p{
+    padding: 1.25rem;
+}
+#inspo{
+    font-family:'Quicksand' sans-serif;
+    font-size: 2.5em;
+    font-weight: 600;
+}
+#author{
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   font-size: 1.5em; 
+   font-weight: 500;
+}
+.inspo-box{
+    text-align: center;
+}
+.inspo-box button{
+         height: 6vmin;
+         width: 16vmin;
+         border-radius: 0.8em;
+         font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#new-quote{
+    background: linear-gradient(80deg,rgb(246, 203, 13),rgb(245, 160, 2));
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#new-quote i{
+    margin-right: 0.8em;
+}
+#save-quote{
+    background-color: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(6px);                                 /* main glass blur */
+    border: 1px solid rgba(255, 255, 255, 0.3);              /* frosty edge */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);    
+}
+#save-quote i{
+    margin-right: 0.8em;
+}
+#save-quote:hover{
+    background: linear-gradient(80deg,rgb(246, 203, 13),rgb(245, 160, 2));
+    border: 1px solid linear-gradient(80deg,rgb(246, 220, 55),rgb(239, 164, 25));
+}
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+
+  /* Background image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* Text styling */
+  color: white;
+  text-shadow: 1px 1px 3px black;
+  transition: background-image 0.8s ease-in-out;
+  position: relative;
+  z-index: 1;
+}
+.saved-quote {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 12px;
+  margin: 5px 0;
+  border-radius: 8px;
+}
+
+.delete-btn {
+  background: red;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background: darkred;
+}
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -400px; /* hidden by default */
+  width: 350px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.3);
+  padding: 20px;
+  transition: right 0.3s ease-in-out;
+  overflow-y: auto;
+  z-index: 1000;
+}
+.sidebar.show {
+  right: 0;
+}
+
