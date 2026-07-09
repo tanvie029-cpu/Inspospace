@@ -7,6 +7,7 @@ body{
     background-image: url("https://images.wallpaperscraft.com/image/single/boat_sea_ocean_130523_1366x768.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
 }
 .navbar{
     margin-top: 1rem;
