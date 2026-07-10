@@ -78,3 +78,23 @@ function changeQuote(){
 }
 
 newQuoteBtn.addEventListener("click" , changeQuote);
+
+const savedQuotes =[];
+
+function savedQuote(){
+    let found=false;
+
+    for(let i=0;i<savedQuotes.length;i++){
+
+     if (savedQuotes[i].text === quotes[currentIndex].text) {
+
+    found = true;
+
+    break;
+    }
+}
+    if(!found)
+       savedQuotes.push(quotes[currentIndex]);
+}
+
+saveBtn.addEventListener("click" , savedQuote);
