@@ -64,20 +64,25 @@ const quotes = [
 
 let currentIndex=0;
 
-function changeQuote(){
-  quoteText.innerText=quotes[currentIndex].text;
-  authorText.innerText = "- " + quotes[currentIndex].author;
+function displayQuote(){
+    quoteText.innerText=quotes[currentIndex].text;
 
-  body.style.backgroundImage = `Url(${quotes[currentIndex].image})`;
+    authorText.innerText = "- " + quotes[currentIndex].author;
+
+    body.style.backgroundImage = `url(${quotes[currentIndex].image})`;
+
+}
+
+function changeQuote(){
 
   currentIndex++;
 
   if(currentIndex >= quotes.length){
     currentIndex=0;
   }
-}
 
-newQuoteBtn.addEventListener("click" , changeQuote);
+  displayQuote();
+}
 
 const savedQuotes =[];
 
@@ -97,4 +102,6 @@ function savedQuote(){
        savedQuotes.push(quotes[currentIndex]);
 }
 
+displayQuote();
+newQuoteBtn.addEventListener("click" , changeQuote);
 saveBtn.addEventListener("click" , savedQuote);
