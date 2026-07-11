@@ -66,27 +66,22 @@ let currentIndex=0;
 
 function displayQuote(){
     quoteText.innerText=quotes[currentIndex].text;
-
     authorText.innerText = "- " + quotes[currentIndex].author;
-
     body.style.backgroundImage = `url(${quotes[currentIndex].image})`;
 
 }
 
 function changeQuote(){
-
   currentIndex++;
-
   if(currentIndex >= quotes.length){
     currentIndex=0;
   }
-
   displayQuote();
 }
 
 const savedQuotes =[];
 
-function savedQuote(){
+function saveQuote(){
     let found=false;
 
     for(let i=0;i<savedQuotes.length;i++){
@@ -94,14 +89,20 @@ function savedQuote(){
      if (savedQuotes[i].text === quotes[currentIndex].text) {
 
     found = true;
-
     break;
     }
 }
-    if(!found)
+    if(!found){
        savedQuotes.push(quotes[currentIndex]);
+
+       notification.classList.add("show");
+
+       setTimeout(()=> {
+        notification.classList.remove("show");
+       } , 2000);
+}
 }
 
 displayQuote();
 newQuoteBtn.addEventListener("click" , changeQuote);
-saveBtn.addEventListener("click" , savedQuote);
+saveBtn.addEventListener("click" , saveQuote);

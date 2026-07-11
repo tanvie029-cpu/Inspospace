@@ -79,34 +79,33 @@ body{
     border-bottom-left-radius: 0.5rem;
     border-top-left-radius: 0.5rem;
     height: 6vmin;
-    width: 2vmin;                                             /* small strip visible */
+    width: 2vmin;
     padding-left: 0;
+
     display: flex;
     align-items: center;
     justify-content: flex-start;
+
     overflow: hidden;
     white-space: nowrap;
-    opacity: 0.9;
-    transition: width 0.4s ease, padding-left 0.4s ease;
+
+    opacity: 0;
+
+    transition:
+        width 0.4s ease,
+        padding-left 0.4s ease,
+        opacity 0.2s ease;
 }
+
 #notification i{
      margin-right: 0.6em;
 }
 
-/* Expanded state */
-#notification.show {
-    width: 30vmin;                        /* full width for message */
-    padding-left: 1rem;
-    border-radius:0.8rem ;
-}
-
-#notification * {
-    opacity: 0;                          /* hide inner elements in collapsed state */
-    transition: opacity 0.2s ease;
-}
-
-#notification.show * {
-    opacity: 1;                        /* reveal inner elements after expand */
+#notification.show{
+    width:30vmin;
+    padding-left:1rem;
+    border-radius:0.8rem;
+    opacity:1;
 }
 
 .app{
