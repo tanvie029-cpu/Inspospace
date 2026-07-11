@@ -1,7 +1,7 @@
 *{
     margin: 0;
-    padding: 0;
-    color: #ffffff;
+    padding: 0;  
+    color: #fff;  
 }
 body{
     background-image: url("https://images.wallpaperscraft.com/image/single/boat_sea_ocean_130523_1366x768.jpg");
@@ -180,7 +180,7 @@ body{
   position: relative;
   z-index: 1;
 }
-.saved-quote {
+.saved-card {
   display: flex;
   justify-content: space-between;
   align-items: center;
