@@ -117,6 +117,9 @@ function displaySavedQuotes(){
         <div class="saved-card">
         <p>${savedQuotes[i].text}</p>
         <small>${savedQuotes[i].author}</small>
+        <button class="delete-btn">
+        <i class="fa-solid fa-trash"></i>
+        </button>
         </div>`
     }
 }
