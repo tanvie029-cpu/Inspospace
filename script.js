@@ -4,10 +4,10 @@ const newQuoteBtn = document.querySelector("#new-quote");
 
 const quoteText = document.querySelector("#inspo");
 const authorText = document.querySelector("#author");
-const savedQuotesContainer = document.querySelector("#saved-quotes");
 const body = document.body; // to change the background
 const heartBtn = document.querySelector("#heart");
 const sidebar = document.querySelector("#sidebar");
+const savedList=document.querySelector("#saved-list");
 
 const quotes = [
     {
@@ -95,6 +95,8 @@ function saveQuote(){
     if(!found){
        savedQuotes.push(quotes[currentIndex]);
 
+       displaySavedQuotes();
+
        notification.classList.add("show");
 
        setTimeout(()=> {
@@ -103,6 +105,23 @@ function saveQuote(){
 }
 }
 
+function toggleSidebar() {
+    sidebar.classList.toggle("show");
+}
+
+function displaySavedQuotes(){
+    savedList.innerHTML="";
+
+    for(let i=0;i<savedQuotes.length;i++){
+        savedList.innerHTML+=`
+        <div class="saved-card">
+        <p>${savedQuotes[i].text}</p>
+        <small>${savedQuotes[i].author}</small>
+        </div>`
+    }
+}
+
 displayQuote();
 newQuoteBtn.addEventListener("click" , changeQuote);
 saveBtn.addEventListener("click" , saveQuote);
+heartBtn.addEventListener("click",toggleSidebar);

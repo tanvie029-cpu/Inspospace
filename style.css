@@ -140,6 +140,9 @@ body{
     background: linear-gradient(80deg,rgb(246, 203, 13),rgb(245, 160, 2));
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
+/* #new-quote:hover{
+    pointer-events: ;
+} */
 
 #new-quote i{
     margin-right: 0.8em;
@@ -201,16 +204,18 @@ body{
 }
 .sidebar {
   position: fixed;
-  top: 0;
-  right: -400px; /* hidden by default */
-  width: 350px;
-  height: 100%;
+  top: 70px;          /* below navbar */
+  right: -340px;
+  width: 320px;
+  max-height: 350px;
+  overflow-y: auto;
   background: #fff;
   box-shadow: -2px 0 10px rgba(0,0,0,0.3);
-  padding: 20px;
+  padding: 15px;
   transition: right 0.3s ease-in-out;
   overflow-y: auto;
   z-index: 1000;
+  border-radius:16px;
 }
 .sidebar.show {
   right: 0;
