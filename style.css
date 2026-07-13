@@ -4,18 +4,28 @@
     box-sizing:border-box;
 }
 body{
-    background-image: url("https://images.wallpaperscraft.com/image/single/boat_sea_ocean_130523_1366x768.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
     color:white
 }
-body::before{
+/* body::before{
     content:"";
     position:fixed;
     inset:0;
     background:rgba(0,0,0,0.35);
     z-index:-1;
+} */
+#background{
+    position: fixed;
+    inset: 0;
+    background-image: url("https://images.wallpaperscraft.com/image/single/boat_sea_ocean_130523_1366x768.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    z-index: -1;
+
+    opacity: 1;
+
+    transition: opacity 0.5s ease;
 }
 .navbar{
     margin-top: 1rem;
