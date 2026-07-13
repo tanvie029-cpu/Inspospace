@@ -67,7 +67,15 @@ let currentIndex=0;
 function displayQuote(){
     quoteText.innerText=quotes[currentIndex].text;
     authorText.innerText = "- " + quotes[currentIndex].author;
-    body.style.backgroundImage = `url(${quotes[currentIndex].image})`;
+    body.classList.add("fade");
+
+setTimeout(() => {
+
+     body.style.backgroundImage = `url(${quotes[currentIndex].image})`;
+
+    body.classList.remove("fade");
+
+}, 180);
 
 }
 
@@ -78,6 +86,20 @@ function changeQuote(){
   }
   displayQuote();
 }
+
+async function fetchQuote(){
+    const response=await fetch("https://dummyjson.com/quotes/random");
+
+    const data = await response.json();
+
+    quoteText.innerText = data.quote;
+    authorText.innerText = "- " + data.author;
+}
+
+
+
+
+
 
 const savedQuotes =[];
 
@@ -116,7 +138,7 @@ function displaySavedQuotes(){
         savedList.innerHTML+=`
         <div class="saved-card">
         <p>${savedQuotes[i].text}</p>
-        <small>${savedQuotes[i].author}</small>
+        <small>-${savedQuotes[i].author}</small>
         <button class="delete-btn" onclick="deleteQuote(${i})">
         <i class="fa-solid fa-trash"></i>
         </button>
