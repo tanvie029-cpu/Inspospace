@@ -62,41 +62,51 @@ const quotes = [
     }
 ];
 
-let currentIndex=0;
+// let currentIndex=0;
 
-function displayQuote(){
-    quoteText.innerText=quotes[currentIndex].text;
-    authorText.innerText = "- " + quotes[currentIndex].author;
-    body.classList.add("fade");
+// function displayQuote(){
+//     quoteText.innerText=quotes[currentIndex].text;
+//     authorText.innerText = "- " + quotes[currentIndex].author;
+//     body.style.background = `url(${quotes[currentIndex].image})`;
 
-setTimeout(() => {
+// }
 
-     body.style.backgroundImage = `url(${quotes[currentIndex].image})`;
-
-    body.classList.remove("fade");
-
-}, 180);
-
+// function changeQuote(){
+//   currentIndex++;
+//   if(currentIndex >= quotes.length){
+//     currentIndex=0;
+//   }
+//   displayQuote();
+// }
+function displayQuote(quoteObject){
+    quoteText.innerText = quoteObject.quote;
+    authorText.innerText = "- " + quoteObject.author;
 }
 
-function changeQuote(){
-  currentIndex++;
-  if(currentIndex >= quotes.length){
-    currentIndex=0;
-  }
-  displayQuote();
-}
+let currentQuote;
 
 async function fetchQuote(){
-    const response=await fetch("https://dummyjson.com/quotes/random");
+    try{
+    const response=await fetch(
+        "https://qapi.vercel.app/api/random"
+    );
+
+    if(!response.ok){
+            throw new Error("Failed to fetch the quote.");
+        }
 
     const data = await response.json();
 
-    quoteText.innerText = data.quote;
-    authorText.innerText = "- " + data.author;
+    currentQuote =data ;
+
+    displayQuote(currentQuote);
 }
+    catch(error){
+        alert("Couldn't load a new quote. Please check your internet connection.");
 
-
+        console.error(error);
+    }
+}
 
 
 
@@ -104,18 +114,22 @@ async function fetchQuote(){
 const savedQuotes =[];
 
 function saveQuote(){
+if(!currentQuote){
+    return;
+}
+
     let found=false;
 
     for(let i=0;i<savedQuotes.length;i++){
 
-     if (savedQuotes[i].text === quotes[currentIndex].text) {
+     if (savedQuotes[i].quote === currentQuote.quote) {
 
     found = true;
     break;
     }
 }
     if(!found){
-       savedQuotes.push(quotes[currentIndex]);
+       savedQuotes.push(currentQuote);
 
        displaySavedQuotes();
 
@@ -137,7 +151,7 @@ function displaySavedQuotes(){
     for(let i=0;i<savedQuotes.length;i++){
         savedList.innerHTML+=`
         <div class="saved-card">
-        <p>${savedQuotes[i].text}</p>
+        <p>${savedQuotes[i].quote}</p>
         <small>-${savedQuotes[i].author}</small>
         <button class="delete-btn" onclick="deleteQuote(${i})">
         <i class="fa-solid fa-trash"></i>
@@ -153,7 +167,8 @@ function deleteQuote(index){
     displaySavedQuotes();
 }
 
-displayQuote();
-newQuoteBtn.addEventListener("click" , changeQuote);
+fetchQuote();
+// displayQuote();
+newQuoteBtn.addEventListener("click" , fetchQuote);
 saveBtn.addEventListener("click" , saveQuote);
 heartBtn.addEventListener("click",toggleSidebar);
