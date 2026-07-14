@@ -4,13 +4,13 @@ InspoSpace is a motivational web application built using **HTML, CSS, and Vanill
 
 ## 🌐 Live Demo
 
-🔗 https://inspospace-tanvi.netlify.app
+🔗 https://inspospace.netlify.app/
 
 ## 📂 Repository
 
-🔗 https://github.com/tanvibyte/InspoSpace
+🔗 https://github.com/tanvie029-cpu/Inspospace
 
-## 📸 Preview
+## 📸 Preview 
 
 ### Home Screen
 
