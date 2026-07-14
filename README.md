@@ -1,6 +1,6 @@
 # ✨ InspoSpace
 
-InspoSpace is a motivational web application built using **HTML, CSS, and Vanilla JavaScript**. It displays random inspirational quotes with dynamic background images while demonstrating REST API integration and modern JavaScript concepts.
+InspoSpace is a quote discovery web application built using HTML, CSS, and JavaScript. It displays random quotes with dynamic background images while demonstrating REST API integration and modern JavaScript concepts.
 
 ## 🌐 Live Demo
 
@@ -28,7 +28,7 @@ InspoSpace is a motivational web application built using **HTML, CSS, and Vanill
 
 ## 🚀 Features
 
-- Generate random inspirational quotes
+- Generate random quotes
 - Dynamic background images using Unsplash API
 - Save favourite quotes
 - Delete saved quotes

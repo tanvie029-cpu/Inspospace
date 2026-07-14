@@ -70,17 +70,14 @@ async function fetchImage() {
             throw new Error("Failed to fetch the quote.");
         }
 
-    const data = await response.json();
-    
-    background.style.opacity = "0";
+   const data = await response.json();
 
-setTimeout(() => {
+   const img = new Image();
+   img.src = data.urls.regular;
 
-    background.style.backgroundImage = `url(${data.urls.regular})`;
-
-    background.style.opacity = "1";
-
-}, 500);
+   img.onload = function () {
+    background.style.backgroundImage = `url(${img.src})`;
+};
 
     }
 
