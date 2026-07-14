@@ -6,13 +6,6 @@
 body{
     color:white
 }
-/* body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,0.35);
-    z-index:-1;
-} */
 #background{
     position: fixed;
     inset: 0;
@@ -49,7 +42,7 @@ body{
 #logo{
     height: 6vmin;
     width: 6vmin;
-    background-image: url("logo.png");
+    background-image: url("assets/logo.png");
     background-size: cover;
     animation: bounce 3s infinite alternate;
     border-radius: 20%;

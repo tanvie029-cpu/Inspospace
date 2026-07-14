@@ -1,10 +1,14 @@
 # ✨ InspoSpace
 
-InspoSpace is a motivational web application built using **HTML, CSS, and Vanilla JavaScript**. It displays random inspirational quotes with dynamic background images using REST APIs.
+InspoSpace is a motivational web application built using **HTML, CSS, and Vanilla JavaScript**. It displays random inspirational quotes with dynamic background images while demonstrating REST API integration and modern JavaScript concepts.
 
 ## 🌐 Live Demo
 
-https://your-github-pages-link
+🔗 https://inspospace-tanvi.netlify.app
+
+## 📂 Repository
+
+🔗 https://github.com/tanvibyte/InspoSpace
 
 ## 📸 Preview
 
@@ -29,7 +33,7 @@ https://your-github-pages-link
 - Save favourite quotes
 - Delete saved quotes
 - Responsive interface
-- API error handling
+- Error handling for API requests
 
 ---
 
@@ -39,7 +43,7 @@ https://your-github-pages-link
 - CSS3
 - JavaScript (ES6)
 - Fetch API
-- Async/Await
+- Async / Await
 - DummyJSON Quote API
 - Unsplash API
 - Font Awesome
@@ -51,10 +55,10 @@ https://your-github-pages-link
 - DOM Manipulation
 - Event Handling
 - Working with Arrays & Objects
-- REST APIs
 - Fetch API
-- Async/Await
-- Error Handling
+- REST APIs
+- Async / Await
+- Error Handling using try...catch
 - Reading API Documentation
 - Working with Nested JSON Objects
 
